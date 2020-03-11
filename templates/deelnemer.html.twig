@@ -37,13 +37,13 @@
 
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        {% block menu %}
-
-                        {% endblock %}
-
+                        <li><a href="{{ path('activiteiten') }}">home</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{{ path('logout') }}">{{ app.user.username }} uitloggen</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right bg-success">
+                        <li><a href="{{ path('homepage') }}">website</a></li>
                     </ul>
                 </div>
             </div>

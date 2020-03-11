@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 use App\Entity\Activiteit;
 use App\Form\ActiviteitType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -11,72 +10,66 @@ use Symfony\Component\Form\Extension\Core\Type\ResetType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 
-class MedewerkerController extends AbstractController
-{
+class MedewerkerController extends AbstractController {
     /**
      * @Route("/admin/activiteiten", name="activiteitenoverzicht")
      */
-    public function activiteitenOverzichtAction()
-    {
+    public function activiteitenOverzichtAction() {
 
-        $activiteiten=$this->getDoctrine()
+        $activiteiten = $this->getDoctrine()
             ->getRepository('App:Activiteit')
             ->findAll();
 
         return $this->render('medewerker/activiteiten.html.twig', [
-            'activiteiten'=>$activiteiten
+            'activiteiten' => $activiteiten
         ]);
     }
 
     /**
      * @Route("/admin/details/{id}", name="details")
      */
-    public function detailsAction($id)
-    {
-        $activiteiten=$this->getDoctrine()
+    public function detailsAction($id) {
+        $activiteiten = $this->getDoctrine()
             ->getRepository('App:Activiteit')
             ->findAll();
-        $activiteit=$this->getDoctrine()
+        $activiteit = $this->getDoctrine()
             ->getRepository('App:Activiteit')
             ->find($id);
 
-        $deelnemers=$this->getDoctrine()
+        $deelnemers = $this->getDoctrine()
             ->getRepository('App:User')
             ->getDeelnemers($id);
 
 
         return $this->render('medewerker/details.html.twig', [
-            'activiteit'=>$activiteit,
-            'deelnemers'=>$deelnemers,
-            'aantal'=>count($activiteiten)
+            'activiteit' => $activiteit,
+            'deelnemers' => $deelnemers,
+            'aantal' => count($activiteiten)
         ]);
     }
 
     /**
      * @Route("/admin/beheer", name="beheer")
      */
-    public function beheerAction()
-    {
-        $activiteiten=$this->getDoctrine()
+    public function beheerAction() {
+        $activiteiten = $this->getDoctrine()
             ->getRepository('App:Activiteit')
             ->findAll();
 
         return $this->render('medewerker/beheer.html.twig', [
-            'activiteiten'=>$activiteiten
+            'activiteiten' => $activiteiten
         ]);
     }
 
     /**
      * @Route("/admin/add", name="add")
      */
-    public function addAction(Request $request)
-    {
+    public function addAction(Request $request) {
         // create a user and a contact
-        $a=new Activiteit();
+        $a = new Activiteit();
 
         $form = $this->createForm(ActiviteitType::class, $a);
-        $form->add('save', SubmitType::class, array('label'=>"voeg toe"));
-        //$form->add('reset', ResetType::class, array('label'=>"reset"));
+        $form->add('save', SubmitType::class, array('label' => "voeg toe"));
 
         $form->handleRequest($request);
 
@@ -92,24 +85,23 @@ class MedewerkerController extends AbstractController
             );
             return $this->redirectToRoute('beheer');
         }
-        $activiteiten=$this->getDoctrine()
+        $activiteiten = $this->getDoctrine()
             ->getRepository('App:Activiteit')
             ->findAll();
-        return $this->render('medewerker/add.html.twig',array('form'=>$form->createView(),'naam'=>'toevoegen','aantal'=>count($activiteiten)
-            ));
+        return $this->render('medewerker/add.html.twig', array('form' => $form->createView(), 'naam' => 'toevoegen', 'aantal' => count($activiteiten)
+        ));
     }
 
     /**
      * @Route("/admin/update/{id}", name="update")
      */
-    public function updateAction($id,Request $request)
-    {
-        $a=$this->getDoctrine()
+    public function updateAction($id, Request $request) {
+        $a = $this->getDoctrine()
             ->getRepository('App:Activiteit')
             ->find($id);
 
         $form = $this->createForm(ActiviteitType::class, $a);
-        $form->add('save', SubmitType::class, array('label'=>"aanpassen"));
+        $form->add('save', SubmitType::class, array('label' => "aanpassen"));
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -129,20 +121,19 @@ class MedewerkerController extends AbstractController
             return $this->redirectToRoute('beheer');
         }
 
-        $activiteiten=$this->getDoctrine()
+        $activiteiten = $this->getDoctrine()
             ->getRepository('App:Activiteit')
             ->findAll();
 
-        return $this->render('medewerker/add.html.twig',array('form'=>$form->createView(),'naam'=>'aanpassen','aantal'=>count($activiteiten)));
+        return $this->render('medewerker/add.html.twig', array('form' => $form->createView(), 'naam' => 'aanpassen', 'aantal' => count($activiteiten)));
     }
 
     /**
      * @Route("/admin/delete/{id}", name="delete")
      */
-    public function deleteAction($id)
-    {
-        $em=$this->getDoctrine()->getManager();
-        $a= $this->getDoctrine()
+    public function deleteAction($id) {
+        $em = $this->getDoctrine()->getManager();
+        $a = $this->getDoctrine()
             ->getRepository('App:Activiteit')->find($id);
         $em->remove($a);
         $em->flush();

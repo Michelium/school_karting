@@ -47,9 +47,16 @@
                         <li><a href="{{ path('login') }}">inloggen</a></li>
                     </ul>
                     {% if app.user %}
-                        <ul class="nav navbar-nav navbar-right bg-danger">
-                            <li><a href="{{ path('activiteitenoverzicht') }}">admin</a></li>
-                        </ul>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <ul class="nav navbar-nav navbar-right bg-danger">
+                                <li><a href="{{ path('activiteitenoverzicht') }}">admin</a></li>
+                            </ul>
+                        {% endif %}
+                        {% if is_granted('ROLE_USER') %}
+                            <ul class="nav navbar-nav navbar-right bg-success">
+                                <li><a href="{{ path('activiteiten') }}">user</a></li>
+                            </ul>
+                        {% endif %}
                     {% endif %}
                 </div>
             </div>

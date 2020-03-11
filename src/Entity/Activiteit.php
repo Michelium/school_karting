@@ -15,8 +15,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Activiteit
 {
     /**
-     * @var int
-     *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -24,8 +22,6 @@ class Activiteit
     private $id;
 
     /**
-     * @var \DateTime
-     *
      * @ORM\Column(name="datum", type="date")
      * @Assert\NotBlank(message="vul een datum in")
      *
@@ -33,8 +29,6 @@ class Activiteit
     private $datum;
 
     /**
-     * @var \DateTime
-     *
      * @ORM\Column(name="tijd", type="time")
      * @Assert\NotBlank(message="vul een tijd in")
      *
@@ -46,15 +40,17 @@ class Activiteit
      * @ORM\JoinColumn(name="soort_id",referencedColumnName="id")
      *
      */
-
     private $soort;
 
     /**
-     * Many Activiteiten have Many Users.
      * @ORM\ManyToMany(targetEntity="User", mappedBy="activiteiten")
      */
-
     private $users;
+
+    /**
+     * @ORM\Column(name="maxDeelnemers", type="integer")
+     */
+    private $maxDeelnemers = 0;
 
     public function __construct()
     {
@@ -133,6 +129,20 @@ class Activiteit
     public function setSoort($soort)
     {
         $this->soort=$soort;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMaxDeelnemers() {
+        return $this->maxDeelnemers;
+    }
+
+    /**
+     * @param mixed $maxDeelnemers
+     */
+    public function setMaxDeelnemers($maxDeelnemers): void {
+        $this->maxDeelnemers = $maxDeelnemers;
     }
 }
 
