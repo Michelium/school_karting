@@ -1,0 +1,49 @@
+{% extends 'medewerker.html.twig' %}
+
+{% block content %}
+    <section>
+        <table class="table table-sm">
+            <caption>Dit zijn alle activiteit soorten van het kartcentrum</caption>
+            <thead>
+            <tr>
+                <td>gebruikersnaam</td>
+                <td>naam</td>
+                <td>rol</td>
+                <td>acties</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>
+                        {{ user.username }}
+                    </td>
+                    <td>
+                        {{ user.voorletters }} &nbsp; {{ user.tussenvoegsel }} &nbsp; {{ user.achternaam }}
+                    </td>
+
+                    <td>
+                        {% for role in user.roles %}
+                            {% if role == 'ROLE_USER' %}
+                                <span class="label label-success">user</span>
+                            {% endif %}
+                            {% if role == 'ROLE_ADMIN' %}
+                                <span class="label label-success">user</span>
+                                <span class="label label-danger">admin</span>
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        <a href="{{ path('user_update', { 'id' : user.id }) }}" class="btn btn-warning btn-sm">bewerk</a>
+                        <a href="{{ path('user_delete', { 'id' : user.id }) }}" class="btn btn-danger btn-sm">verwijder</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addModal">
+            <span class="glyphicon glyphicon-plus"></span>
+            Toevoegen
+        </a>
+    </section>
+{% endblock %}
