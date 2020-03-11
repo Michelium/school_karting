@@ -14,8 +14,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Soortactiviteit
 {
     /**
-     * @var int
-     *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -23,29 +21,21 @@ class Soortactiviteit
     private $id;
 
     /**
-     * @var string
-     *
      * @ORM\Column(name="naam", type="string", length=255)
      */
     private $naam;
 
     /**
-     * @var int
-     *
      * @ORM\Column(name="min_leeftijd", type="integer")
      */
     private $minLeeftijd;
 
     /**
-     * @var int
-     *
      * @ORM\Column(name="tijdsduur", type="integer")
      */
     private $tijdsduur;
 
     /**
-     * @var string
-     *
      * @ORM\Column(name="prijs", type="decimal", precision=6, scale=2)
      */
     private $prijs;
@@ -53,8 +43,12 @@ class Soortactiviteit
     /**
      * @ORM\OneToMany(targetEntity="Activiteit", mappedBy="soort")
      */
-
     private $activiteiten;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $beschrijving;
 
     public function __construct()
     {
@@ -165,6 +159,18 @@ class Soortactiviteit
     public function getPrijs()
     {
         return $this->prijs;
+    }
+
+    public function getBeschrijving(): ?string
+    {
+        return $this->beschrijving;
+    }
+
+    public function setBeschrijving(?string $beschrijving): self
+    {
+        $this->beschrijving = $beschrijving;
+
+        return $this;
     }
 }
 
