@@ -42,7 +42,7 @@ class Activiteit
     private $tijd;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Soortactiviteit", inversedBy="activiteiten")
+     * @ORM\ManyToOne(targetEntity="ActivityType", inversedBy="activiteiten")
      * @ORM\JoinColumn(name="soort_id",referencedColumnName="id")
      *
      */

@@ -1,0 +1,8 @@
+{% extends 'medewerker.html.twig' %}
+
+{% block content %}
+    {{ form_start(activityTypeForm, {'action': path('activitytype_modify', {'id' : id }), 'method': 'POST'}) }}
+    {{ form_widget(activityTypeForm) }}
+    <button type="submit" class="btn btn-primary">Opslaan</button>
+    {{ form_end(activityTypeForm) }}
+{% endblock %}

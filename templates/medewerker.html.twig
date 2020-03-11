@@ -38,12 +38,21 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         {% block menu %}
-
+                            <li><a href="{{ path('activiteitenoverzicht') }}">home</a></li>
+                            <li {% if app.request.attributes.get('_route') in [
+                                'beheer',
+                                'add',
+                                'update'
+                            ] %} class="active"{% endif %}><a href="{{ path('beheer') }}">beheer</a></li>
+                            <li {% if app.request.attributes.get( '_route' ) starts with 'activitytype' %} class="active"{% endif %}><a href="{{ path('activitytype_index') }}">soort activiteiten beheer</a></li>
                         {% endblock %}
 
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{{ path('logout') }}">{{ app.user.username }} uitloggen</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right bg-success">
+                        <li><a href="{{ path('homepage') }}">Website</a></li>
                     </ul>
                 </div>
             </div>

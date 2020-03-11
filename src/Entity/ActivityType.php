@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="soortactiviteiten")
  * @ORM\Entity(repositoryClass="App\Repository\SoortactiviteitRepository")
  */
-class Soortactiviteit
+class ActivityType
 {
     /**
      * @ORM\Column(name="id", type="integer")

@@ -1,0 +1,60 @@
+{% extends 'medewerker.html.twig' %}
+
+{% block content %}
+    <section>
+        <table class="table table-sm">
+            <caption>Dit zijn alle activiteit soorten van het kartcentrum</caption>
+            <thead>
+            <tr>
+                <td>naam</td>
+                <td>tijdsduur</td>
+                <td>prijs</td>
+                <td>acties</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for activityType in activityTypes %}
+                <tr>
+                    <td>
+                        {{ activityType.naam }}
+                    </td>
+                    <td>
+                        {{ activityType.tijdsduur }} min
+                    </td>
+
+                    <td>
+                        € {{ activityType.prijs }}
+                    </td>
+                    <td>
+                        <a href="{{ path('activitytype_update', { 'id' : activityType.id }) }}" class="btn btn-warning btn-sm">bewerk</a>
+                        <a href="{{ path('activitytype_delete', { 'id' : activityType.id }) }}" class="btn btn-danger btn-sm">verwijder</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addModal">
+            <span class="glyphicon glyphicon-plus"></span>
+            Toevoegen
+        </a>
+    </section>
+
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Activiteitsoort toevoegen</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {{ form_start(activityTypeForm, {'action': path('activitytype_modify'), 'method': 'POST'}) }}
+                    {{ form_widget(activityTypeForm) }}
+                    <button type="submit" class="btn btn-primary">Opslaan</button>
+                    {{ form_end(activityTypeForm) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

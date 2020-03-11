@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Soortactiviteit;
+use App\Entity\ActivityType;
 use App\Entity\User;
 use App\Form\ActiviteitType;
 use App\Form\UserType;
@@ -30,7 +30,7 @@ class BezoekerController extends AbstractController
      */
     public function kartactiviteitenAction()
     {
-        $repository=$this->getDoctrine()->getRepository(Soortactiviteit::class);
+        $repository=$this->getDoctrine()->getRepository(ActivityType::class);
         $soortactiviteiten=$repository->findAll();
         return $this->render('bezoeker/kartactiviteiten.html.twig',array('boodschap'=>'Welkom','soortactiviteiten'=>$soortactiviteiten));
     }
@@ -121,7 +121,7 @@ class BezoekerController extends AbstractController
      */
     public function nieuweSoortActiviteitToevoegenAction(Request $request)
     {
-        $soortAct = new SoortActiviteit();
+        $soortAct = new ActivityType();
         $soortAct->setNaam('Geef een naam op!');
 
         $form = $this->createForm(ActiviteitType::class,$soortAct);

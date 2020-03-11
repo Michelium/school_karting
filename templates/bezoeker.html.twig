@@ -46,6 +46,11 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{{ path('login') }}">inloggen</a></li>
                     </ul>
+                    {% if app.user %}
+                        <ul class="nav navbar-nav navbar-right bg-danger">
+                            <li><a href="{{ path('activiteitenoverzicht') }}">admin</a></li>
+                        </ul>
+                    {% endif %}
                 </div>
             </div>
         </nav>
