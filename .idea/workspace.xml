@@ -2,51 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed1dd0ca-1c2b-4bfe-9dac-7f065dd8d514" name="Default" comment="geen">
-      <change afterPath="$PROJECT_DIR$/templates/deelnemer/profile.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/karting.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/karting.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DeelnemerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DeelnemerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bezoeker.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/deelnemer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/.htaccess" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/app.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/app_dev.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/apple-touch-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/config.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/css/deelnemer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/css/images/ui-icons_444444_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/css/images/ui-icons_555555_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/css/images/ui-icons_777620_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/css/images/ui-icons_777777_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/css/images/ui-icons_cc0000_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/css/images/ui-icons_ffffff_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/css/jquery-ui-timepicker-addon.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/css/jquery-ui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/img/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/img/kart-wide.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/img/kart.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/img/linkedin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/img/pinterest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/img/sodi2Drive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/img/sodiLR4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/img/sodiLR5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/img/tweet.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/js/jquery-3.2.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/js/jquery-ui-timepicker-addon.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/js/jquery-ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/js/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/karting.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web123/robots.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +186,7 @@
       <workItem from="1583831045659" duration="298000" />
       <workItem from="1583835735766" duration="3604000" />
       <workItem from="1583839456383" duration="16866000" />
-      <workItem from="1584477440685" duration="2189000" />
+      <workItem from="1584477440685" duration="2893000" />
     </task>
     <task id="LOCAL-00001" summary="geen">
       <created>1518034348398</created>
