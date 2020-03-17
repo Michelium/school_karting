@@ -43,20 +43,24 @@
                         {% endblock %}
 
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{{ path('login') }}">inloggen</a></li>
-                    </ul>
                     {% if app.user %}
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="{{ path('logout') }}">{{ app.user.username }} uitloggen</a></li>
+                        </ul>
                         {% if is_granted('ROLE_ADMIN') %}
                             <ul class="nav navbar-nav navbar-right bg-danger">
                                 <li><a href="{{ path('activiteitenoverzicht') }}">admin</a></li>
                             </ul>
                         {% endif %}
                         {% if is_granted('ROLE_USER') %}
-                            <ul class="nav navbar-nav navbar-right bg-success">
-                                <li><a href="{{ path('activiteiten') }}">user</a></li>
+                            <ul class="nav navbar-nav navbar-right bg-info">
+                                <li><a href="{{ path('activiteiten') }}">user dashboard</a></li>
                             </ul>
                         {% endif %}
+                    {% else %}
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="{{ path('login') }}">inloggen</a></li>
+                        </ul>
                     {% endif %}
                 </div>
             </div>

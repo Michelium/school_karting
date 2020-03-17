@@ -39,12 +39,20 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{{ path('activiteiten') }}">home</a></li>
                     </ul>
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ path('deelnemer_profile') }}">PROFIEL</a></li>
+                    </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{{ path('logout') }}">{{ app.user.username }} uitloggen</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right bg-success">
                         <li><a href="{{ path('homepage') }}">website</a></li>
                     </ul>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <ul class="nav navbar-nav navbar-right bg-danger">
+                            <li><a href="{{ path('activiteitenoverzicht') }}">admin</a></li>
+                        </ul>
+                    {% endif %}
                 </div>
             </div>
         </nav>

@@ -55,6 +55,11 @@
                     <ul class="nav navbar-nav navbar-right bg-success">
                         <li><a href="{{ path('homepage') }}">website</a></li>
                     </ul>
+                    {% if is_granted('ROLE_USER') %}
+                        <ul class="nav navbar-nav navbar-right bg-info">
+                            <li><a href="{{ path('activiteiten') }}">user dashboard</a></li>
+                        </ul>
+                    {% endif %}
                 </div>
             </div>
         </nav>
