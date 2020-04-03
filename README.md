@@ -11,3 +11,6 @@ DATABASE
 
 OPSTARTEN
 - php bin/console server:run (dev)
+
+ONDERHOUD:
+elk ticket in aparte commit op volgorde.
